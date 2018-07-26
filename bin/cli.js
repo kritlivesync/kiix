@@ -26,7 +26,7 @@ function createApplication (name, root_path) {
         scripts: {
           "dev": "node server.js",
           "build": "next build",
-          "start": "next start",
+          "start": "pm2 start start.json",
           "production": "pm2 start start_pro.json",
 
         },
