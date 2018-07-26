@@ -1,0 +1,50 @@
+{
+  "name": "kiix",
+  "description": "kiix wrapper for express framework",
+  "version": "0.0.1",
+  "author": {
+    "name": "kritinline",
+    "email": "kritinline@gmail.com",
+    "url": ""
+  },
+  "keywords": [
+    "kii",
+    "express",
+    "expressjs",
+    "connect",
+    "framework"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "kiix": "./bin/cli.js"
+  },
+  "dependencies": {
+    "next": "^6.1.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "async": "*",
+    "body-parser": "*",
+    "bluebird": "*",
+    "connect-redis": "*",
+    "cookie-parser": "*",
+    "crypto": "*",
+    "dispatcherjs": "*",
+    "express": "*",
+    "express-session": "*",
+    "fs-extra": "*",
+    "request": "*",
+    "lodash": "*",
+    "moment": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "multer": "*",
+    "uuid": "*",
+    "nodemailer": "*",
+    "redis": "*",
+    "swig": "*",
+    "ws": "2.3.0"
+  }
+}
