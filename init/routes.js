@@ -9,5 +9,4 @@ module.exports = function(app, view) {
         })
     }
     eachFiles(C.dir.controller);
-    app.use(express.static(C.dir.public));
 };

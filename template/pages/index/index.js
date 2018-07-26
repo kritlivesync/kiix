@@ -19,7 +19,7 @@ export default class Index extends Component {
                 <div className="uk-grid">
                     <div className="uk-width-1-1 uk-text-center">
                         <h2>{title}</h2>
-                        <Link href={`/item?id=xxxxxxxxxxx} as={`/item/xxxxxxxxxxx`}>
+                        <Link href={`/item?id=xxxxxxxxxxx`} as={`/item/xxxxxxxxxxx`}>
                         <a className="uk-button uk-button-default uk-width-1-1" >Go</a>
                         </Link>
                     </div>

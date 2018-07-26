@@ -100,7 +100,7 @@ function createApplication (name, root_path) {
     "uri": "mongodb://127.0.0.1:27017/_${name}",
     "opts": {
       "user": "${name}",
-      "pass": "${new_pass}"
+      "pass": "${new_pass}",
       "useNewUrlParser": true
     }
   },    
