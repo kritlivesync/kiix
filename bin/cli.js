@@ -29,10 +29,22 @@ function createApplication (name, root_path) {
           "start": "next start",
           "pro": "NODE_ENV=production node server.js",
           "production": "next build && pm2 start npm --name '"+name+".server' -- run pro"
-
         },
         dependencies: {
           "kiix":"git+https://github.com/kritlivesync/kiix.git"
+        },
+        devDependencies: {
+          "babel-core": "7.0.0-beta.3",
+          "babel-eslint": "^8.2.3",
+          "babel-plugin-import": "^1.7.0",
+          "babel-plugin-transform-decorators": "^6.24.1",
+          "babel-plugin-transform-decorators-legacy": "^1.3.4",
+          "babel-preset-es2015": "7.0.0-beta.3",
+          "babel-preset-react": "7.0.0-beta.3",
+          "babel-preset-stage-1": "7.0.0-beta.3",
+          "eslint": "^4.19.1",
+          "eslint-loader": "^2.0.0",
+          "eslint-plugin-react": "^7.8.2"
         }
       }
 
