@@ -41,6 +41,7 @@ export default class Index extends Component {
                         <a className="uk-button uk-button-default uk-width-1-1" >Go</a>
                         </Link> | 
                         <a onClick={() => switchingLanguage("en")}>{t("label")}</a>
+                        <div>ENV { process.env.TEST }</div>
                     </div>
                 </div>
             </div>
