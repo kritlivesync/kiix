@@ -6,7 +6,7 @@ export default (App) => {
 
     constructor(props) {
       super(props)
-      this.mobxStore = {store}
+      this.mobxStore = store
     }
 
     render() {

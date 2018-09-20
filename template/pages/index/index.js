@@ -1,9 +1,10 @@
 import { Component } from "react";
 import { inject, observer } from 'mobx-react'
-import { Layout, Link, Router} from "../../components";
+//import {  } from "../../base/services";
+import { Layout, Link, Router, Translate} from "../../base/components";
 
-@inject('app') @observer
-export default class Index extends Component {
+@inject('store') @observer
+class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,28 +21,27 @@ export default class Index extends Component {
   }
 
   switchingLanguage (){
-      const { t, i18n } = this.props;
-      if (i18n.language === "en") {
-          i18n.changeLanguage("th");
+      const { store } = this.props;
+      if (store.app.locale === "en") {
+          store.app.setLocale("th")
       } else {
-          i18n.changeLanguage("en");
+          store.app.setLocale("en")
       }
   };
 
   render() {
-    const { t } = this.props;
+    const { store } = this.props;
     return (
-      <Layout title={'index'}>
+      <Layout title={'label'}>
         <section className="uk-section-large uk-background-cover">
             <div className="uk-container">
                 <div className="uk-grid">
                     <div className="uk-width-1-1 uk-text-center">
-                        <h2>{title} {this.props.store.app.lastUpdate}</h2>
+                        <h2>{store.app.lastUpdate}</h2>
                         <Link href={`/item?id=xxxxxxxxxxx`} as={`/item/xxxxxxxxxxx`}>
                         <a className="uk-button uk-button-default uk-width-1-1" >Go</a>
                         </Link> | 
-                        <a onClick={() => switchingLanguage("en")}>{t("label")}</a>
-                        <div>ENV { process.env.TEST }</div>
+                        <a onClick={() => this.switchingLanguage()}><Translate text="label"/></a>
                     </div>
                 </div>
             </div>
@@ -50,3 +50,4 @@ export default class Index extends Component {
     );
   }
 }
+export default Index;
