@@ -26,8 +26,9 @@ function createApplication (name, root_path) {
         scripts: {
           "dev": "node server.js",
           "build": "next build",
-          "start": "pm2 start start.json",
-          "production": "pm2 start start_pro.json",
+          "start": "next start",
+          "pro": "NODE_ENV=production node server.js",
+          "production": "next build && pm2 start npm --name '"+name+".server' -- run pro"
 
         },
         dependencies: {
