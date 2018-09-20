@@ -14,6 +14,15 @@ export default class Item extends Component {
     return { title:'Item',id }
   }
 
+  switchingLanguage (){
+      const { t, i18n } = this.props;
+      if (i18n.language === "en") {
+          i18n.changeLanguage("th");
+      } else {
+          i18n.changeLanguage("en");
+      }
+  };
+  
   render() {
     const {title,id} = this.props
     return (
@@ -22,8 +31,9 @@ export default class Item extends Component {
             <div className="uk-container">
                 <div className="uk-grid">
                     <div className="uk-width-1-1 uk-text-center">
-                        <h2>{title}</h2>
+                        <h2>{title} {this.props.store.app.lastUpdate}</h2>
                         <p>{id}</p>
+                        <a onClick={() => switchingLanguage("en")}>{t("label")}</a>
                     </div>
                 </div>
             </div>
