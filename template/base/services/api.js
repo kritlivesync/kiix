@@ -21,6 +21,7 @@ var post = async(api,data={}) => {
 var get = async(api,data={}) => {
 	var data_url = Object.keys(data).length>=1? '?'+Object.keys(data).map(key=>key + '=' + data[key]).join('&') : '';
     return new Promise((resolve, reject) => {
+        console.log('/api/'+api+data_url)
         fetch('/api/'+api+data_url)
             .then(response => response.json())
             .then(data => {
@@ -32,7 +33,7 @@ var get = async(api,data={}) => {
     })
 }
 
-export default {
+export {
     post,
     get
 };

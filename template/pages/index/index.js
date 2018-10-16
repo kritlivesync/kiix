@@ -25,7 +25,7 @@ class Index extends Component {
   render() {
     const { store } = this.props;
     return (
-      <Layout title={'label'}>
+      <Layout title={Translate({text:'title'})}>
         <section className="uk-section-large uk-background-cover">
             <div className="uk-container">
                 <div className="uk-grid">
