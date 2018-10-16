@@ -1,4 +1,6 @@
-import mobxStore from "./mobx";
+import * as Store from "../store";
+import * as Api from "../api";
 export {
-    mobxStore,
+    Store,
+    Api
 };

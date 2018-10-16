@@ -1,8 +1,8 @@
 import Router from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from './Layout';
-import Translate from './Translate';
+import Layout from './layout';
+import Translate from './translate';
 export {
 	Router,
 	Head,

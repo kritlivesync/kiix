@@ -1,15 +1,16 @@
 import { Component } from "react";
-import { inject, observer } from 'mobx-react'
-//import {  } from "../../base/services";
+import { observer } from 'mobx-react'
+import { Store, Api } from "../../base/services";
 import { Layout, Link, Router, Translate} from "../../base/components";
 
 
-@inject('store') @observer
+@observer
 class Item extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: 1
+      loading: false,
+      data:[]
     };
   }
 
@@ -18,34 +19,39 @@ class Item extends Component {
     return { title:'Item',id }
   }
 
-  switchingLanguage (){
-      const { t, i18n } = this.props;
-      console.log(i18n.language)
-      if (i18n.language === "en") {
-          i18n.changeLanguage("th");
-      } else {
-          i18n.changeLanguage("en");
-      }
-  };
-  
-  componentDidMount () {
-    //this.props.store.app.start()
+  async componentDidMount () {
+    Store.app.start()
+    this.setState({loading:true})
+    var data = await Api.get('test/'+this.props.id)
+    this.setState({
+      loading:false,
+      data
+    })
   }
 
   componentWillUnmount () {
-    //this.props.store.app.stop()
+    Store.app.stop()
   }
 
-  render() {
-    const {title, id, store} = this.props
+  onItem(item){
+    console.log(item)
+  }
+
+  renderItem (item) {
+    return (<div className="list_item" onClick={()=>this.onItem(item)}>{item.name}</div>)
+  }
+
+  render () {
+    const {title, id} = this.props
     return (
       <Layout title={'title'}>
         <section className="uk-section-large uk-background-cover">
             <div className="uk-container">
                 <div className="uk-grid">
                     <div className="uk-width-1-1 uk-text-center">
-                        <h2>{title} {store.app.lastUpdate}</h2>
+                        <h2>{title} {Store.app.lastUpdate}</h2>
                         <p>{id} <Translate text="label"/></p>
+                        {data.map(item=>this.renderItem(item))}
                     </div>
                 </div>
             </div>

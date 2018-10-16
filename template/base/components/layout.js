@@ -1,28 +1,34 @@
 import { Component, Fragment } from "react";
-import { inject, observer } from 'mobx-react'
-import { Head, Link, Translate} from "../";
+import { observer } from 'mobx-react'
 
-@inject('store') @observer
+import { Head, Link, Translate } from "../components";
+import { Store } from "../services";
+
+@observer
 class Layout extends Component {
   constructor(props) {
     super(props);
   }
 
   switchingLanguage (){
-      const { store } = this.props;
-      if (store.app.locale === "en") {
-          store.app.setLocale("th")
+      if (Store.app.locale === "en") {
+          Store.app.setLocale("th")
       } else {
-          store.app.setLocale("en")
+          Store.app.setLocale("en")
       }
   };
 
   render() {
-    const { store, title, children } = this.props;
+    const { title, children } = this.props;
     return (
       <Fragment>
         <Head>
           <title>{title}</title>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <link rel="stylesheet" href="/static/css/uikit.min.css" />
+          <link rel="stylesheet" href="/static/css/main.css" />
+          <script src="/static/js/uikit.min.js" />
         </Head>
         <div>
           <div className="uk-navbar-container uk-navbar-transparent">
