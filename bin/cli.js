@@ -89,7 +89,7 @@ function createApplication (name, root_path) {
         return Math.floor(Math.random() * (high - low + 1) + low);
       }
 
-      var new_port = getRandomArbitrary(1001,999);
+      var new_port = getRandomArbitrary(1001,9999);
       var new_ports = getRandomArbitrary(1,10);
       var new_pass = crypto.createHash('md5').update(name).digest('hex')
 

@@ -1,8 +1,7 @@
 import { Component, Fragment } from "react";
 import { observer } from 'mobx-react'
-
 import { Head, Link, Translate } from "../components";
-import { Store } from "../services";
+import { Store, Gtag } from "../services";
 
 @observer
 class Layout extends Component {
@@ -18,17 +17,16 @@ class Layout extends Component {
       }
   };
 
+  componentDidMount() {
+      Gtag.pageview(document.location.pathname)
+  }
+
   render() {
     const { title, children } = this.props;
     return (
       <Fragment>
         <Head>
           <title>{title}</title>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link rel="stylesheet" href="/static/css/uikit.min.css" />
-          <link rel="stylesheet" href="/static/css/main.css" />
-          <script src="/static/js/uikit.min.js" />
         </Head>
         <div>
           <div className="uk-navbar-container uk-navbar-transparent">
@@ -52,11 +50,7 @@ class Layout extends Component {
                   </nav>
               </div>
           </div>
-
-
           {children}
-
-
           <footer className="copyright">
               <div className="uk-container">
                   <div uk-grid="true">
