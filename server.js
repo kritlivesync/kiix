@@ -20,7 +20,7 @@ exports.boot = function(config) {
     return app
 }
 
-exports.init = function(config) {
+exports.server = function(config) {
     const next = require('next')
     const http = require('http')
     const dev = process.env.NODE_ENV !== 'production'
