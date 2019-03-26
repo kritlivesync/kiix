@@ -44,7 +44,11 @@ function createApplication (name, root_path) {
           "babel-preset-stage-1": "7.0.0-beta.3",
           "eslint": "^4.19.1",
           "eslint-loader": "^2.0.0",
-          "eslint-plugin-react": "^7.8.2"
+          "eslint-plugin-react": "^7.8.2",
+          "chai": "^4.2.0",
+          "log4js": "^3.0.6",
+          "mocha": "^5.2.0",
+          "node-fetch": "^2.2.0"
         }
       }
 
