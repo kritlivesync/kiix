@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[it("=>${1:TestFunction}", async function () {
+        ${2}
+        
+        //expect(result).to.have.property('key').equal(val)
+    })]]></content>
+    <tabTrigger>test.function</tabTrigger>
+    <scope>source.js</scope>
+    <description>test.function()</description>
+</snippet>
