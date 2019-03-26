@@ -24,7 +24,7 @@ exports.server = function(config) {
     const next = require('next')
     const http = require('http')
     const dev = process.env.NODE_ENV !== 'production'
-    const ini = next({ dev })
+    const ini = next({ dir: './client',dev })
     const handle = ini.getRequestHandler()
     const app =exports.boot(config)
     ini.prepare()
