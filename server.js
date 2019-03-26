@@ -10,7 +10,11 @@ exports.init = function(config) {
         .then(() => {
             const app = express()
             const server = http.createServer(app);
-
+        
+            global.DOCS = {
+                api:{},
+                socket:{},
+            };
             global.C = config; //config
             global.L = {}; //local session
             global.D = {}; //data base
