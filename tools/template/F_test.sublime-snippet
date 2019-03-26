@@ -25,5 +25,5 @@ describe('## ${1:TestSection}', function() {
 })]]></content>
     <tabTrigger>test.new</tabTrigger>
     <scope>source.js</scope>
-    <description>new.test()</description>
+    <description>test.new()</description>
 </snippet>

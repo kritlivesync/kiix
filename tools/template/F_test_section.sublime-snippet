@@ -7,7 +7,7 @@ describe('## ${1:TestSection}', function() {
         //expect(result).to.have.property('key').equal(val)
     })
 })]]></content>
-    <tabTrigger>test.new</tabTrigger>
+    <tabTrigger>test.section</tabTrigger>
     <scope>source.js</scope>
-    <description>new.test()</description>
+    <description>test.section()</description>
 </snippet>
