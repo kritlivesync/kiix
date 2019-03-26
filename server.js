@@ -1,3 +1,24 @@
+exports.test = function(config) {
+    const express = require('express')
+    const app = express()
+    global.DOCS = {
+        api:{},
+        socket:{},
+    };
+    global.C = config; //config
+    global.L = {}; //local session
+    global.D = {}; //data base
+    global.M = {}; //middle where
+    global.S = {}; //service
+    global.R = require('./init/cache.js'); //redis
+    global.F = require('./init/funcs.js'); //function
+
+    require('./init/models.js'); // model
+    require('./init/middles.js'); // middle
+    require('./init/boot.js')(app); // model
+    require('./init/services.js'); // service
+}
+
 exports.init = function(config) {
     const express = require('express')
     const next = require('next')
